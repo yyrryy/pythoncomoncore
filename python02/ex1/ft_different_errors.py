@@ -56,4 +56,7 @@ def test_error_types():
 
 
 if __name__ == "__main__":
-    test_error_types()
+    try:
+        test_error_types()
+    except Exception as e:
+        print(f"an unexpected error: {e}")

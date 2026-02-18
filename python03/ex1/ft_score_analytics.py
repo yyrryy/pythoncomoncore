@@ -16,7 +16,7 @@ if __name__ == "__main__":
             except ValueError:
                 print(f"Invalid score '{args[i]}' ignored.")
             i += 1
-        print(f"Scores processed: [{', '.join(map(str, scores))}]")
+        print(f"Scores processed: {scores}")
         print(f"Total players: {len(scores)}")
         print(f"Total score: {sum(scores)}")
         print(f"Average score: {sum(scores) / len(scores):.2f}")

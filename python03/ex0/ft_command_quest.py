@@ -16,4 +16,4 @@ if __name__ == "__main__":
         while i < argumants_count:
             print(f"Argument {i+1}: {args[i+1]}")
             i += 1
-    print(f"Total arguments: {argumants_count + 1}")
+        print(f"Total arguments: {argumants_count + 1}")

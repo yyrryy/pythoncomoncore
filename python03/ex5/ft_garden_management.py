@@ -1,6 +1,3 @@
-# ft_garden_management.py
-
-# ---------------- CUSTOM EXCEPTIONS ---------------- #
 
 class GardenError(Exception):
     """Base class for garden-related errors."""
@@ -22,12 +19,10 @@ class HealthCheckError(GardenError):
     pass
 
 
-# ---------------- GARDEN MANAGER CLASS ---------------- #
-
 class GardenManager:
     def __init__(self):
-        self.plants = {}  # plant_name -> {"water": int, "sun": int}
-        self.water_tank = 10  # simulate limited water resource
+        self.plants = {}  
+        self.water_tank = 10
 
     def add_plant(self, plant_name, water_level, sunlight_hours):
         if not plant_name or plant_name.strip() == "":
@@ -77,8 +72,6 @@ class GardenManager:
         return f"{plant_name}: healthy (water: {water_level}, sun: {sunlight_hours})"
 
 
-# ---------------- TEST FUNCTION ---------------- #
-
 def test_garden_management():
     print("=== Garden Management System ===")
 
@@ -92,8 +85,8 @@ def test_garden_management():
         garden.add_plant("lettuce", 7, 6)
         print("Added lettuce successfully")
 
-        garden.add_plant("", 5, 8)  # invalid name
-        print("Added unnamed plant successfully")
+        garden.add_plant("", 5, 8)
+        print("Added empty name plant successfully")
 
     except PlantError as e:
         print("Error adding plant:", e)
