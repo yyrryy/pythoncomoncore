@@ -1,25 +1,21 @@
-import sys
-if __name__ == "__main__":
-    args = sys.argv[1:]
-    created_coords = (10, 20, 5)
-    parsed_coords = args
-    converted_to_number = tuple()
-    print(parsed_coords)
-    error_parsing = False
-    error_messgae = ""
-    indice = 0
-    for i in parsed_coords:
-        try:
-            converted_to_number[indice] = int(parsed_coords[indice])
-            indice += 1
-        except ValueError as e:
-            error_parsing = True
-            error_messgae = str(e)
-    if error_parsing:
-        print(f'Parsing invalid coordinates: {args}')
-        print(f'Error parsing coordinates: {error_messgae}')
-        print(f'Error details - Type: ValueError, Args: ("{error_messgae}",)')
-    else:
-        print(f'Parsing coordinates: "{args}"')
-        print(f'Parsed position: {converted_to_number}')
-        print("Distance between (0, 0, 0) and (3, 4, 0): 5.0")
+import math
+
+# Create a fixed position
+position = (10, 20, 5)
+print("Position created:", position)
+
+# Distance from origin
+x, y, z = position
+distance = math.sqrt(x**2 + y**2 + z**2)
+print(f"Distance between (0,0,0) and {position}: {distance:.2f}")
+
+# Parsing a coordinate string
+coord_str = "3,4,0"
+try:
+    parsed_position = tuple(int(c) for c in coord_str.split(','))
+    print("Parsed position:", parsed_position)
+    px, py, pz = parsed_position
+    print(f"Distance between (0,0,0) and {parsed_position}: {math.sqrt(px**2 + py**2 + pz**2):.2f}")
+except ValueError as e:
+    print(f"Error parsing coordinates: {e}")
+    print("Error details - Type:", type(e), "Args:", e.args)
