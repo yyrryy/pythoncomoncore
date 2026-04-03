@@ -1,0 +1,19 @@
+[project]
+name = "python08"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "aaliali"}
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy (==2.2.6)",
+    "requests (==2.33.1)",
+    "matplotlib (==3.10.8)",
+    "pandas"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
