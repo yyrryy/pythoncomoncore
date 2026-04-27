@@ -28,6 +28,7 @@ connection: gate2-waiting_area2
 connection: gate3-waiting_area3
 connection: waiting_area1-waiting_area2
 connection: waiting_area2-waiting_area3
+connection: waiting_area2-waiting_area3
 
 # Restricted tunnel path (slow but more capacity)
 connection: gate3-restricted_tunnel1

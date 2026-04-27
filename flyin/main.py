@@ -1,22 +1,46 @@
-from parser import Data, Parsing_error
-from djikstra import Dijkstra
+# main.py
+import sys
+from parser import Parser
+from exceptions import Parsing_error
+from algorithm import Path_finder
 
-with open("test.txt") as file:
-    file_content = file.readlines()
-init = Data(0, (), (), [], [])
-try:
-    init.parse_data(file_content)
-    data = init.get_dict()
-    dijkstra = Dijkstra(data["zones"])
-    print(data)
-    # single best path
-    start_name = next(z["name"] for z in data["zones"] if z["is_start"])
-    end_name = next(z["name"] for z in data["zones"] if z["is_end"])
-    best = dijkstra.find_path(start_name, end_name)
+def main(filepath: str, verbose: bool = True) -> None:
+    """Main entry point."""
+    try:
+        with open(filepath) as file:
+            file_content = file.readlines()
 
-    # all valid paths sorted by cost
-    all_paths = dijkstra.find_all_paths(start_name, end_name)
-    print(best)
-except Parsing_error as e:
-    print(e)
+        parser = Parser()
+        parser.parse_data(file_content)
+        data = parser.get_dict()
+        # Run simulation with verbose output
+        pathfinder = Path_finder(data["zones"], data["connections"])
+        start_zone = next(i["name"] for i in data["zones"] if i["is_start"])
+        end_zone = next(i["name"] for i in data["zones"] if i["is_end"])
+        paths_needed = round((data["nb_drones"])/2)
+        with open("t.txt", "w") as f:
+            print(data["zones"], file=f)
+        allpaths = pathfinder.find_all_paths(start_zone, end_zone, paths_needed)
+        with open("connections.txt", "w") as f:
+            print(data['connections'], file=f)
+        with open("paths.txt", "w") as f:
+            print(allpaths, file=f)
+    except Parsing_error as e:
+        print(f"Parse Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found", file=sys.stderr)
+        sys.exit(1)
+        # todo: uncomment this
+    # except Exception as e:
+    #     print("Unexpected error", e)
 
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python main.py <map_file> [--quiet]", file=sys.stderr)
+        sys.exit(1)
+    
+    verbose = "--quiet" not in sys.argv
+    map_file = sys.argv[1]
+    
+    main(map_file, verbose=verbose)
