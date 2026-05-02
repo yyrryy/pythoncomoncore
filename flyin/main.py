@@ -3,7 +3,7 @@ import sys
 from parser import Parser
 from exceptions import Parsing_error
 from algorithm import Path_finder
-
+from simulation import Simulation
 def main(filepath: str, verbose: bool = True) -> None:
     """Main entry point."""
     try:
@@ -17,14 +17,16 @@ def main(filepath: str, verbose: bool = True) -> None:
         pathfinder = Path_finder(data["zones"], data["connections"])
         start_zone = next(i["name"] for i in data["zones"] if i["is_start"])
         end_zone = next(i["name"] for i in data["zones"] if i["is_end"])
-        paths_needed = round((data["nb_drones"])/2)
-        with open("t.txt", "w") as f:
-            print(data["zones"], file=f)
-        allpaths = pathfinder.find_all_paths(start_zone, end_zone, paths_needed)
-        with open("connections.txt", "w") as f:
-            print(data['connections'], file=f)
-        with open("paths.txt", "w") as f:
-            print(allpaths, file=f)
+        sim = Simulation(data["nb_drones"], data["zones"], data["connections"], start_zone, end_zone)
+        sim.run()
+        # paths_needed = round((data["nb_drones"])/2)
+        # with open("t.txt", "w") as f:
+        #     print(data["zones"], file=f)
+        # allpaths = pathfinder.find_all_paths(start_zone, end_zone, paths_needed)
+        # with open("connections.txt", "w") as f:
+        #     print(data['connections'], file=f)
+        # with open("paths.txt", "w") as f:
+        #     print(allpaths, file=f)
     except Parsing_error as e:
         print(f"Parse Error: {e}", file=sys.stderr)
         sys.exit(1)

@@ -82,73 +82,54 @@ class Path_finder:
         return path
 
     def find_all_paths(self, start: str, end: str, paths_needed: int) -> list[list[str]]:
-        """Find all simple paths from start to end using DFS.
+        """Find all simple paths from start to end using iterative DFS.
 
         Args:
             start: Start zone name.
             end: End zone name.
+            paths_needed: Maximum number of paths to find.
 
         Returns:
             List of paths, each path is a list of zone names, sorted by cost.
         """
         all_paths: list[list[str]] = []
-        self._dfs(start, end, [start], set([start]), all_paths, paths_needed)
+
+        # Stack holds tuples of (current_node, path_so_far, visited_set)
+        # Using list of tuples instead of recursion
+        stack = [(start, [start], {start})]
+
+        while stack and len(all_paths) < paths_needed:
+            current, path, visited = stack.pop()
+            
+            if current == end:
+                all_paths.append(list(path))
+                continue
+            
+            # Explore neighbors (reverse order to maintain same order as recursion)
+            for neighbor_name in reversed(self.zones[current]["connected_to"]):
+                if neighbor_name in visited:
+                    continue
+                
+                neighbor = self.zones[neighbor_name]
+                if neighbor["zone_type"] == "blocked":
+                    continue
+                
+                # Create new path and visited set (no mutations!)
+                new_path = path + [neighbor_name]
+                new_visited = visited | {neighbor_name}
+                stack.append((neighbor_name, new_path, new_visited))
+
+        # Sort by cost (cheapest first)
         all_paths.sort(key=lambda p: self._path_cost(p))
         return all_paths
-
-    def _dfs(
-        self,
-        current: str,
-        end: str,
-        path: list[str],
-        visited: set[str],
-        all_paths: list[list[str]],
-        paths_needed: int
-    ) -> None:
-        """Recursive DFS to find all simple paths.
-
-        Args:
-            current: Current zone name.
-            end: Target zone name.
-            path: Current path being explored.
-            visited: Set of visited zone names in current path.
-            all_paths: Accumulator for completed paths.
-        """
-        
-        if current == end:
-            all_paths.append(list(path))
-            return
-        for neighbor_name in self.zones[current]["connected_to"]:
-            if len(all_paths) > paths_needed:
-                break
-            if neighbor_name in visited:
-                continue
-            neighbor = self.zones[neighbor_name]
-            if neighbor["zone_type"] == "blocked":
-                continue
-            print(neighbor)
-            try:
-                connection = next(i for i in self.connections if i['from']==current and i['to']==neighbor_name)
-                print(f"connection {current} {neighbor_name} {connection['max_link_capacity']}")
-                path.append(f"{neighbor_name}:{connection['max_link_capacity']}:{neighbor['max_drones']}")
-            except Exception:
-                path.append(f"{neighbor_name}:0:0")
-            visited.add(neighbor_name)
-            self._dfs(neighbor_name, end, path, visited, all_paths, paths_needed)
-            path.pop()
-            visited.remove(neighbor_name)
 
     def _path_cost(self, path: list[str]) -> int:
         """Calculate total cost of a path.
 
         Args:
-            path: List of zone names.
+            path: List of zone names (clean strings, no metadata).
 
         Returns:
             Total turn cost of the path.
         """
-        s = 0
-        for i in path[1:]:
-            zone_name = i.split(":")[0]
-            s += self.zones[zone_name]["cost"]
-        return s
+        return sum(self.zones[zone_name]["cost"] for zone_name in path[1:])

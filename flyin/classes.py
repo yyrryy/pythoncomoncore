@@ -120,22 +120,19 @@ class DroneStatus(Enum):
     DELIVERED = "delivered"  # Keep for backward compatibility
 
 
-@dataclass
 class Drone:
-    id: int
-    current_zone: str
-    target_zone: Optional[str] = None
-    path: list[str] = None
-    status: DroneStatus = DroneStatus.WAITING
-    turns_remaining: int = 0
-    connection_name: Optional[str] = None
-
-    def __post_init__(self):
-        if self.path is None:
-            self.path = []
-
-    def __repr__(self) -> str:
-        return f"D{self.id}"
+    def __init__(self, drone_id: int, start_zone: str, end_zone: str):
+        self.id = drone_id
+        self.current_zone = start_zone
+        self.path = []              # List of zones to visit (excluding current)
+        self.status = DroneStatus.WAITING     # "waiting", "flying", "delivered"
+        self.target_zone = None     # For flying: where drone is going
+        self.turns_remaining = 0    # For flying: turns until arrival
+    def is_delevered(self) -> bool:
+        if current_zone == end_zone:
+            self.status = DroneStatus.DELIVERED
+            return True
+        return False
 
 class ZoneState:
     """Tracks dynamic state of a zone during simulation."""
