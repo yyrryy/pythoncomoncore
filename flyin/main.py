@@ -40,8 +40,8 @@ def main(filepath: str, verbose: bool = True) -> None:
         print(f"Error: File '{filepath}' not found", file=sys.stderr)
         sys.exit(1)
         # todo: uncomment this
-    # except Exception as e:
-    #     print("Unexpected error", e)
+    except Exception as e:
+        print("Unexpected error", e)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

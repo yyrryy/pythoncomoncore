@@ -7,8 +7,9 @@ hub: path_a 2 1 [color=blue max_drones=1]
 hub: path_b 2 -1 [color=blue max_drones=3]
 end_hub: goal 3 0 [color=red]
 
-connection: start-junction [max_link_capacity = 1]
-connection: junction-path_a
+connection: start-junction [max_link_capacity=1]
+#connection: junction-path_a
+connection: path_a-junction
 connection: junction-path_b
 connection: path_a-goal
-connection: path_b-goal
+connection: goal-path_b

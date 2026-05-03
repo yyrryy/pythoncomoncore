@@ -23,6 +23,8 @@ class Simulation():
             #this will assign same path for all
             #i.path = pathfinder.find_path(start_zone, end_zone)
             all_paths = pathfinder.find_all_paths(self.start_zone, self.end_zone, paths_needed=self.nb_drones)
+            if len(all_paths) == 0:
+                raise ValueError("No path found in this graph")
             for i, drone in enumerate(self.drones):
                 path_index = i % len(all_paths)  # ← round-robin
                 full_path = all_paths[path_index]
