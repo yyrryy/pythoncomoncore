@@ -67,7 +67,8 @@ class Parser():
                 y = int(start.group(3))
                 attributes = start.group(4)
                 zone = Zone(name, True, False, x, y, attributes)
-                zone.get_data(l_dx, number_of_drones)
+                print(f"start zone attributes: {number_of_drones}")
+                zone.set_data(l_dx, number_of_drones)
                 self.zones.append(zone)
                 self.start = (x, y)
             elif end:
@@ -82,7 +83,7 @@ class Parser():
                 y = int(end.group(3))
                 attributes = end.group(4)
                 zone = Zone(name, False, True, x, y, attributes)
-                zone.get_data(l_dx, number_of_drones)
+                zone.set_data(l_dx, number_of_drones)
                 self.zones.append(zone)
                 self.end = (x, y)
             elif hub:
@@ -93,7 +94,7 @@ class Parser():
                 y = int(hub.group(3))
                 attributes = hub.group(4)
                 zone = Zone(name, False, False, x, y, attributes)
-                zone.get_data(l_dx, number_of_drones)
+                zone.set_data(l_dx, number_of_drones)
                 self.zones.append(zone)
             elif connection:
                 zones = connection.group(1)
@@ -172,7 +173,10 @@ class Parser():
                 key, val = valid_attribute.group(1), valid_attribute.group(2)
                 if key == "max_link_capacity":
                     try:
-                        connection_instence.max_link_capacity = int(val)
+                        capacity = int(val)
+                        if capacity < 1:
+                            raise Parsing_error(f"max_link_capacity must be a positive integer, line {l_dx}")
+                        connection_instence.max_link_capacity =capacity
                     except ValueError:
                         raise Parsing_error(f"Invalid max_link_capacity value '{val}', line {l_dx}")
                     # Add other connection attributes here if needed

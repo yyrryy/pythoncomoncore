@@ -13,12 +13,18 @@ def main(filepath: str, verbose: bool = True) -> None:
         parser = Parser()
         parser.parse_data(file_content)
         data = parser.get_dict()
+        with open("zones.txt", "w") as f:
+            print(data["zones"], file=f)
+        with open("connections.txt", "w") as f:
+            print(data['connections'], file=f)
         # Run simulation with verbose output
-        pathfinder = Path_finder(data["zones"], data["connections"])
         start_zone = next(i["name"] for i in data["zones"] if i["is_start"])
         end_zone = next(i["name"] for i in data["zones"] if i["is_end"])
         sim = Simulation(data["nb_drones"], data["zones"], data["connections"], start_zone, end_zone)
         sim.run()
+        # for i in range(10):
+        #     with open("pathdijkstrq.txt", "a") as f:
+        #         print(f"Path {i+1}: {pathfinder.find_path2(start_zone, end_zone)}", file=f)
         # paths_needed = round((data["nb_drones"])/2)
         # with open("t.txt", "w") as f:
         #     print(data["zones"], file=f)

@@ -34,7 +34,7 @@ class Zone():
             "y": self.y,
             "connected_to": self.connected_to
         }
-    def get_data(self, l_dx, number_of_drones):
+    def set_data(self, l_dx, number_of_drones):
         # we need number of drones to make sure start and end well accept them
         valid_zone_types = ["normal", "restricted", "priority", "blocked"]
         if self.attributes:
@@ -66,14 +66,20 @@ class Zone():
                 elif key == "max_drones":
                     try:
                         max_drones = int(val)
-                        if self.is_start and max_drones < number_of_drones:
-                            raise Parsing_error(f"start zone must accept all drones, line: {l_dx}")
-                        if self.is_end and max_drones < number_of_drones:
-                            raise Parsing_error(f"end zone must accept all drones, line: {l_dx}")
-                        self.max_drones = max_drones
+                        if max_drones < 1:
+                            raise Parsing_error(f"max_drones must be at least 1, line: {l_dx}")
+                        # if self.is_start and max_drones < number_of_drones:
+                        #     raise Parsing_error(f"start zone must accept all drones, line: {l_dx}")
+                        # if self.is_end and max_drones < number_of_drones:
+                        #     raise Parsing_error(f"end zone must accept all drones, line: {l_dx}")
+                        if self.is_start or self.is_end:
+                            self.max_drones = number_of_drones
+                        else:
+                            self.max_drones = max_drones
                     except ValueError:
-                        raise Parsing_error(f"{val} is not a valid number, line: {l_dx}")
-                
+                        raise Parsing_error(f"{val} is not a valid number, line: {l_dx}")       
+                if self.is_start or self.is_end:
+                    self.max_drones = number_of_drones
         else:
             if self.is_start:
                 raise Parsing_error(f"start zone must accept all drones, line: {l_dx}")
@@ -81,7 +87,8 @@ class Zone():
                 raise Parsing_error(f"end zone must accept all drones, line: {l_dx}")
             self.color = None
             self.zone_type = "normal"
-            self.max_drones = 1
+            if self.is_start or self.is_end:
+                self.max_drones = number_of_drones
 
     def get_dict(self) -> dict:
         return {
@@ -121,18 +128,14 @@ class DroneStatus(Enum):
 
 
 class Drone:
-    def __init__(self, drone_id: int, start_zone: str, end_zone: str):
+    def __init__(self, drone_id: int, start_zone: str):
         self.id = drone_id
         self.current_zone = start_zone
         self.path = []              # List of zones to visit (excluding current)
         self.status = DroneStatus.WAITING     # "waiting", "flying", "delivered"
         self.target_zone = None     # For flying: where drone is going
         self.turns_remaining = 0    # For flying: turns until arrival
-    def is_delevered(self) -> bool:
-        if current_zone == end_zone:
-            self.status = DroneStatus.DELIVERED
-            return True
-        return False
+
 
 class ZoneState:
     """Tracks dynamic state of a zone during simulation."""

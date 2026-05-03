@@ -1,6 +1,6 @@
 import heapq
 from typing import Optional
-
+import random
 class Path_finder:
     """Dijkstra pathfinding on the parsed zone graph."""
 
@@ -46,6 +46,49 @@ class Path_finder:
                     heapq.heappush(heap, (new_cost, priority_flag, neighbor_name))
                 elif new_cost == costs[neighbor_name]:
                     # Same cost - prefer priority zones
+                    existing_is_priority = (self.zones[neighbor_name]["zone_type"] == "priority")
+                    new_is_priority = (neighbor["zone_type"] == "priority")
+                    if new_is_priority and not existing_is_priority:
+                        costs[neighbor_name] = new_cost
+                        previous[neighbor_name] = current_name
+                        priority_flag = 0 if neighbor["zone_type"] == "priority" else 1
+                        heapq.heappush(heap, (new_cost, priority_flag, neighbor_name))
+
+        return None
+    def find_path2(self, start: str, end: str) -> Optional[list[str]]:
+        costs = {name: float("inf") for name in self.zones}
+        costs[start] = 0
+        previous = {name: None for name in self.zones}
+        visited = set()
+        heap = [(0, 1, start)]
+
+        while heap:
+            current_cost, current_priority_flag, current_name = heapq.heappop(heap)
+
+            if current_name in visited:
+                continue
+            visited.add(current_name)
+
+            if current_name == end:
+                return self.build_path(previous, start, end)
+
+            # SHUFFLE NEIGHBORS FOR DIFFERENT PATHS
+            neighbors = list(self.zones[current_name]["connected_to"])
+            random.shuffle(neighbors)
+
+            for neighbor_name in neighbors:
+                if neighbor_name in visited:
+                    continue
+                neighbor = self.zones[neighbor_name]
+                if neighbor["zone_type"] == "blocked":
+                    continue
+                new_cost = current_cost + neighbor["cost"]
+                if new_cost < costs[neighbor_name]:
+                    costs[neighbor_name] = new_cost
+                    previous[neighbor_name] = current_name
+                    priority_flag = 0 if neighbor["zone_type"] == "priority" else 1
+                    heapq.heappush(heap, (new_cost, priority_flag, neighbor_name))
+                elif new_cost == costs[neighbor_name]:
                     existing_is_priority = (self.zones[neighbor_name]["zone_type"] == "priority")
                     new_is_priority = (neighbor["zone_type"] == "priority")
                     if new_is_priority and not existing_is_priority:

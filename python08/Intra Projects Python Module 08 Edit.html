@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://sheets-py.netlify.app/page/py_08.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+  <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" name="viewport">
+  <meta content="yes" name="mobile-web-app-capable">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="translucent-black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="Intranet 42" name="apple-mobile-web-app-title">
+  <meta content="on" http-equiv="cleartype">
+  <link href="https://cdn.intra.42.fr/" rel="preconnect">
+  <link href="https://projects.intra.42.fr/assets/42_logo_black-684989d43d629b3c0ff6fd7e1157ee04db9bb7a73fba8ec4e01543d650a1c607.png" rel="icon" type="image/png">
+  <link href="https://projects.intra.42.fr/assets/42_logo_black-684989d43d629b3c0ff6fd7e1157ee04db9bb7a73fba8ec4e01543d650a1c607.png" rel="shortcut icon" type="image/png">
+  <link href="https://projects.intra.42.fr/opensearch.xml" rel="search" title="project" type="application/opensearchdescription+xml">
+  <title>Intra Projects Python Module 08 Edit</title>
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="WAt5Sr6Pi4afdWvuPhnUdz1KCdHFQcjsN0/ZecaPysXcCSbClxefmdGlOGyUWiMAvOoODkk3MthxtiBN1oqpjQ==">
+  <link rel="stylesheet" media="all" href="./Intra Projects Python Module 08 Edit_files/application-f52eee43c6567eb789b2bc4cf8b30af6103bd129fea7e6d2b314bcd5dd041e81.css">
+  <link rel="stylesheet" media="screen" href="./Intra Projects Python Module 08 Edit_files/bzd7hlb.css">
+  <style>
+    .deprecated {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  </style>
+  <script>
+    (function () {
+      this._user = {
+        "login": "fakadjal",
+        "id": 236771,
+        "url": "https://profile.intra.42.fr/users/fakadjal"
+      };
+
+      this._consumer_address = 'wss://profile.intra.42.fr/cable';
+
+    }).call(this);
+  </script>
+  <script>
+    (function () {
+      this._environment = "production";
+
+      this._git_commit = "";
+
+      this._release = this._git_commit;
+
+    }).call(this);
+  </script>
+
+</head>
+
+<body class=" ">
+  <div class="notifications-flash-top-bar">
+
+  </div>
+  <script>
+    (function () {
+      this._notifCount = 0;
+
+      this._flashes = [];
+
+    }).call(this);
+  </script>
+
+  <div class="notifications-container hidden-xs" data-flashes-url="https://profile.intra.42.fr/flashes" data-notifications-url="https://profile.intra.42.fr/notifications" style="top: 60px; left: 1288.59px;">
+    <header class="notifications--header">
+      <span>notifications</span>
+      <a href="https://profile.intra.42.fr/notifications">See all notifications</a>
+    </header>
+    <ul class="menu-drop-list"></ul>
+  </div>
+
+  <div class="main-navbar">
+    <div class="main-navbar-left">
+      <div class="main-navbar-logo" data-turbolinks-scaffold="">
+        <a href="https://profile.intra.42.fr/"><img alt="42" src="./Intra Projects Python Module 08 Edit_files/42_logo-7dfc9110a5319a308863b96bda33cea995046d1731cebb735e41b16255106c12.svg">
+        </a>
+      </div>
+      <span class="hidden-sidebars main-menu-trigger lines-button x" data-trigger-menu="">
+        <span class="fal fa-bars"></span>
+      </span>
+      <a class="search-mobile-button hidden-sidebars fal fa-search" href="https://profile.intra.42.fr/searches"></a>
+    </div>
+    <div class="main-navbar-user-nav" data-turbolinks-scaffold="">
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="left-sidebar-fix with-main-menu"></div>
+    <div class="page-sidebar left-main-container page-sidebar-fixed-left under-main-navbar">
+      <ul class="main-left-navbar">
+        <div class="_">
+          <li>
+            <a class="inactive" href="https://profile.intra.42.fr/"><span class="icon-user-2"></span>
+              <span class="visible-overlay">
+                Profile
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="active" href="https://projects.intra.42.fr/"><span class="icon-network-2-1"></span>
+              <span class="visible-overlay">
+                Projets
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="inactive" href="https://elearning.intra.42.fr/"><span class="icon-movie-play-1"></span>
+              <span class="visible-overlay">
+                E-learning
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="inactive" href="https://stackoverflowteams.com/c/42network"><span class="icon-bubble-conversation-5"></span>
+              <span class="visible-overlay">
+                Forum
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="inactive" href="https://companies.intra.42.fr/"><span class="icon-briefcase"></span>
+              <span class="visible-overlay">
+                Companies
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="inactive" href="https://meta.intra.42.fr/"><span class="icon-compass-2"></span>
+              <span class="visible-overlay">
+                Meta
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="inactive" href="https://shop.intra.42.fr/"><span class="icon-shopping-1"></span>
+              <span class="visible-overlay">
+                Shop
+              </span>
+            </a>
+          </li>
+        </div>
+        <div class="admin-links">
+        </div>
+      </ul>
+    </div>
+    <div class="page-content" data-turbolinks-scaffold="">
+      <div class="row">
+        <div class="main-top-menu">
+
+        </div>
+        <div class="container-item scale-team-container">
+          <div class="row mt-4">
+            <form class="simple_form form-horizontal" novalidate="novalidate" id="edit_scale_team_9152561" action="https://projects.intra.42.fr/projects/python-module-08/project_sessions/15257/evaluations/12774/scales/57654/scale_teams/9152561" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="WAt5Sr6Pi4afdWvuPhnUdz1KCdHFQcjsN0/ZecaPysXcCSbClxefmdGlOGyUWiMAvOoODkk3MthxtiBN1oqpjQ==">
+              <div class="scale-section-answers col-sm-12 scale-div">
+                <section class="scale-section-item dancer from-down" id="section-161470">
+                  <div class="section-header">
+                    <h3 class="font-weight-bold mb-1">PY_08</h3>
+                    <p class="font-italic"></p>
+                  </div>
+                  <h4 class="scale-question-name">Basics</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <ul>
+                    <li>Only grade the work that is in the learner's or group's Git repository.</li>
+                    <li>Check that the Git repository contains the following directories: ex0/, ex1/, ex2/</li>
+                    <li>Verify that each directory contains the required files as specified in the subject.</li>
+                    <li>Ensure no .env files with real secrets are committed to the repository.</li>
+                  </ul>
+
+                  <p>If any of these conditions are not met, the peer-review stops here.</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][0][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549279" name="[scale_team][answers_attributes][0][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][0][value]" id="radio_[scale_team][answers_attributes][0]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][0]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][0][value]" id="radio_[scale_team][answers_attributes][0]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][0]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </section>
+                <section class="scale-section-item dancer from-down" id="section-161471">
+                  <div class="section-header">
+                    <hr>
+                    <h3 class="font-weight-bold mb-1">Exercise 0</h3>
+                    <p class="font-italic"></p>
+                  </div>
+                  <h4 class="scale-question-name">Exercise 0 - Virtual Environments (The Construct)</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Navigate to ex0/ directory and examine the files:</p>
+
+                  <p>Required files:</p>
+
+                  <ul>
+                    <li>construct.py</li>
+                  </ul>
+
+                  <p>Test the construct.py program:</p>
+
+                  <ol>
+                    <li>Run it outside a virtual environment</li>
+                    <li>Create a virtual environment as instructed by the program</li>
+                    <li>Activate the virtual environment and run the program again</li>
+                  </ol>
+
+                  <p>The program should:</p>
+
+                  <ul>
+                    <li>Correctly detect whether it's running in a virtual environment</li>
+                    <li>Display different outputs for each scenario</li>
+                    <li>Provide clear instructions for creating a virtual environment</li>
+                    <li>Show relevant path information</li>
+                  </ul>
+
+                  <p>Ask the learner to explain:</p>
+
+                  <ul>
+                    <li>What is a virtual environment and why is it important?</li>
+                    <li>What problems do virtual environments solve?</li>
+                    <li>How does their program detect the virtual environment?</li>
+                  </ul>
+
+                  <p>Does the exercise work correctly and does the learner<br>
+                    demonstrate understanding?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][1][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549280" name="[scale_team][answers_attributes][1][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][1][value]" id="radio_[scale_team][answers_attributes][1]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][1]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][1][value]" id="radio_[scale_team][answers_attributes][1]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][1]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <h4 class="scale-question-name">Code Quality</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Check the code quality and documentation:</p>
+
+                  <ul>
+                    <li>Are there clear comments explaining the virtual environment detection logic?</li>
+                    <li>Does the code demonstrate understanding beyond just copying examples?</li>
+                    <li>Are variable names meaningful and self-documenting?</li>
+                  </ul>
+
+                  <p>Is the code quality and self-documentation satisfactory?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][2][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549281" name="[scale_team][answers_attributes][2][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][2][value]" id="radio_[scale_team][answers_attributes][2]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][2]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][2][value]" id="radio_[scale_team][answers_attributes][2]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][2]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </section>
+                <section class="scale-section-item dancer from-down" id="section-161472">
+                  <div class="section-header">
+                    <hr>
+                    <h3 class="font-weight-bold mb-1">Exercise 1</h3>
+                    <p class="font-italic"></p>
+                  </div>
+                  <h4 class="scale-question-name">Exercise 1 - Package Management (Loading Programs)</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Navigate to ex01/ directory and examine the files:</p>
+
+                  <p>Required files:</p>
+
+                  <ul>
+                    <li>loading.py</li>
+                    <li>requirements.txt</li>
+                    <li>pyproject.toml</li>
+                  </ul>
+
+                  <p>Test the package management:</p>
+
+                  <ol>
+                    <li>Try running loading.py without dependencies installed</li>
+                    <li>Install dependencies using pip (requirements.txt)</li>
+                    <li>Test the program functionality</li>
+                    <li>If Poetry is available, test Poetry installation (pyproject.toml)</li>
+                  </ol>
+
+                  <p>The program should:</p>
+
+                  <ul>
+                    <li>Handle missing dependencies gracefully with helpful error messages</li>
+                    <li>Use pandas, requests, and matplotlib as specified</li>
+                    <li>Generate some form of data analysis or visualization</li>
+                    <li>Show package version information</li>
+                  </ul>
+
+                  <p>Ask the learner to explain:</p>
+
+                  <ul>
+                    <li>The difference between pip and Poetry</li>
+                    <li>Why dependency management is important</li>
+                    <li>How their program handles missing dependencies</li>
+                  </ul>
+
+                  <p>Does the exercise work correctly and does the learner<br>
+                    demonstrate understanding?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][3][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549282" name="[scale_team][answers_attributes][3][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][3][value]" id="radio_[scale_team][answers_attributes][3]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][3]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][3][value]" id="radio_[scale_team][answers_attributes][3]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][3]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <h4 class="scale-question-name">Dependency Files</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Examine the dependency files:</p>
+
+                  <ul>
+                    <li>requirements.txt: Are the required packages listed with
+                      appropriate versions?</li>
+                    <li>pyproject.toml: Is it properly formatted for Poetry?</li>
+                  </ul>
+
+                  <p>Check the program's output and code:</p>
+
+                  <ul>
+                    <li>Does the program clearly show the differences between pip
+                      and Poetry?</li>
+                    <li>Does the code demonstrate understanding of dependency management
+                      concepts?</li>
+                  </ul>
+
+                  <p>Is the dependency management implementation satisfactory?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][4][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549283" name="[scale_team][answers_attributes][4][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][4][value]" id="radio_[scale_team][answers_attributes][4]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][4]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][4][value]" id="radio_[scale_team][answers_attributes][4]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][4]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </section>
+                <section class="scale-section-item dancer from-down" id="section-161473">
+                  <div class="section-header">
+                    <hr>
+                    <h3 class="font-weight-bold mb-1">Exercise 2</h3>
+                    <p class="font-italic"></p>
+                  </div>
+                  <h4 class="scale-question-name">Exercise 2 - Environment Variables (The Oracle)</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Navigate to ex02/ directory and examine the files:</p>
+
+                  <p>Required files:</p>
+
+                  <ul>
+                    <li>oracle.py</li>
+                    <li>.env.example</li>
+                    <li>.gitignore</li>
+                  </ul>
+
+                  <p>Test the environment configuration:</p>
+
+                  <ol>
+                    <li>Install python-dotenv if not already installed (pip install python-dotenv)</li>
+                    <li>Run oracle.py without any environment variables set</li>
+                    <li>Create a .env file based on .env.example with test values</li>
+                    <li>Run the program again and verify it loads the configuration</li>
+                    <li>Test with some environment variables set directly in the shell</li>
+                  </ol>
+
+                  <p>The program should:</p>
+
+                  <ul>
+                    <li>Use python-dotenv library to load .env files</li>
+                    <li>Load configuration from environment variables</li>
+                    <li>Use .env file for development settings</li>
+                    <li>Handle missing configuration appropriately</li>
+                    <li>Show loaded configuration (without exposing real secrets)</li>
+                    <li>Demonstrate understanding of environment-based configuration</li>
+                  </ul>
+
+                  <p>Ask the learner to explain:</p>
+
+                  <ul>
+                    <li>Why environment variables are important for security</li>
+                    <li>The difference between development and production configuration</li>
+                    <li>How python-dotenv helps with configuration management</li>
+                    <li>How their program handles missing configuration</li>
+                  </ul>
+
+                  <p>Does the exercise work correctly and does the learner demonstrate<br>
+                    understanding?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][5][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549284" name="[scale_team][answers_attributes][5][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][5][value]" id="radio_[scale_team][answers_attributes][5]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][5]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][5][value]" id="radio_[scale_team][answers_attributes][5]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][5]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <h4 class="scale-question-name">Security Implementation</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Check the security implementation:</p>
+
+                  <ul>
+                    <li>.env.example: Contains template values, not real secrets?</li>
+                    <li>.gitignore: Properly configured to exclude .env files?</li>
+                    <li>oracle.py: No hardcoded secrets in the source code?</li>
+                    <li>python-dotenv: Properly used to load environment variables?</li>
+                  </ul>
+
+                  <p>Check the program and code quality:</p>
+
+                  <ul>
+                    <li>Does the program demonstrate understanding of environment
+                      variables and security best practices?</li>
+                    <li>Does the code show proper use of python-dotenv library?</li>
+                    <li>Does the code show proper configuration management techniques?</li>
+                  </ul>
+
+                  <p>Verify the learner understands:</p>
+
+                  <ul>
+                    <li>Why secrets should never be committed to version control</li>
+                    <li>How environment variables enable different configurations for
+                      different environments</li>
+                    <li>The role of python-dotenv in loading .env files</li>
+                    <li>The security implications of configuration management</li>
+                  </ul>
+
+                  <p>Is the security and configuration implementation satisfactory?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][6][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549285" name="[scale_team][answers_attributes][6][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][6][value]" id="radio_[scale_team][answers_attributes][6]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][6]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][6][value]" id="radio_[scale_team][answers_attributes][6]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][6]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </section>
+                <section class="scale-section-item dancer from-down" id="section-161474">
+                  <div class="section-header">
+                    <hr>
+                    <h3 class="font-weight-bold mb-1">Overall Understanding and Best Practices</h3>
+                    <p class="font-italic"></p>
+                  </div>
+                  <h4 class="scale-question-name">Overall Understanding</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Assess the learner's overall understanding by asking them to explain:</p>
+
+                  <ol>
+                    <li>
+                      <p>How these three concepts (virtual environments, package management,<br>
+                        environment variables) work together in a real data engineering project</p>
+                    </li>
+                    <li>
+                      <p>Why each of these tools is important for professional development</p>
+                    </li>
+                    <li>
+                      <p>What problems would occur without these tools</p>
+                    </li>
+                    <li>
+                      <p>How they would set up a new data engineering project using all<br>
+                        three concepts</p>
+                    </li>
+                  </ol>
+
+                  <p>The learner should demonstrate understanding beyond just making the code work;<br>
+                    they should understand the WHY behind these tools and be able to explain the<br>
+                    concepts clearly to others.</p>
+
+                  <p>Does the learner demonstrate comprehensive understanding of the project's<br>
+                    learning objectives?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][7][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549286" name="[scale_team][answers_attributes][7][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][7][value]" id="radio_[scale_team][answers_attributes][7]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][7]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][7][value]" id="radio_[scale_team][answers_attributes][7]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][7]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                  <h4 class="scale-question-name">Code Quality and Best Practices</h4>
+                  <p class="scale-section-guidelines">
+                  </p>
+                  <p>Evaluate the overall code quality:</p>
+
+                  <ul>
+                    <li>Is the code written in Python 3.10 or higher?</li>
+                    <li>Does the code adhere to the flake8 linter standards (no errors)?</li>
+                    <li>Are type hints REQUIRED for all functions and methods (parameters and return values)?</li>
+                    <li>Docstrings are NOT required for this module.</li>
+                    <li>Is the code well-structured and readable?</li>
+                    <li>Are error handling and edge cases properly managed?</li>
+                    <li>Do the programs follow Python best practices?</li>
+                    <li>Is the documentation clear and helpful?</li>
+                  </ul>
+
+                  <p>The code should demonstrate not just working functionality,<br>
+                    but good software engineering practices that would be expected in<br>
+                    a professional environment.</p>
+
+                  <p>Is the overall code quality satisfactory for a data engineering<br>
+                    professional?</p>
+
+                  <p></p>
+                  <div class="scale-question-answers">
+                    <div class="form-group hidden scale_team_answer_id">
+                      <div class="col-sm-10"><input class="form-control hidden" name="[scale_team][answers_attributes][8][id]" type="hidden" id="scale_team_answer_id"></div>
+                    </div>
+                    <div class="form-group hidden scale_team_answer_question_id">
+                      <div class="col-sm-10"><input class="form-control hidden" value="549287" name="[scale_team][answers_attributes][8][question_id]" type="hidden" id="scale_team_answer_question_id"></div>
+                    </div>
+                    <div class="btn-group block">
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][8][value]" id="radio_[scale_team][answers_attributes][8]_true" type="radio" value="1">
+                      <label class="btn btn-success checkbox-label light-bg" for="radio_[scale_team][answers_attributes][8]_true">
+                        <span class="icon-check"></span>
+                        Yes
+                      </label>
+                      <input autocomplete="off" class="checkbox-input" name="[scale_team][answers_attributes][8][value]" id="radio_[scale_team][answers_attributes][8]_false" type="radio" value="0" checked="checked">
+                      <label class="btn btn-danger checkbox-label light-bg" for="radio_[scale_team][answers_attributes][8]_false">
+                        <span class="icon-times"></span>
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+
+        <footer class="legal-mentions text-center text-muted my-4 col-sm-12 flex justify-content-center flex-column flex-sm-row">
+          <a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/33">API General Terms of
+            Use</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/2">Declaration on the
+            use of cookies</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/5">Privacy
+            policy</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/6">General term of
+            use of the site</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/4">Rules
+            of procedure</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/1">Terms of
+            use for video surveillance</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/3">Legal notices</a></footer>
+      </div>
+    </div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="smartModalLabel" class="modal fade" id="smartModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+            x
+          </button>
+          <h3 id="smartModalLabel">
+
+          </h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="note-title"></h4>
+        </div>
+        <div class="modal-footer">
+          <button aria-hidden="true" class="btn" data-dismiss="modal">Cancel</button>
+          <button class="send btn btn-primary">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="flashModalLabel" class="modal fade" id="flashModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
+            x
+          </button>
+          <h3 id="flashModalLabel"></h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="note-title">Flash modal content (raw)</h4>
+        </div>
+        <div class="modal-footer">
+          <button aria-hidden="true" class="btn btn-block btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-cache="true" class="hide"></div>
+
+  <script async="" await="" src="./Intra Projects Python Module 08 Edit_files/js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BJ34XNRJCV');
+  </script>
+
+  <script>
+    var jsClasses = ["new_message", "topic-reply"];
+    jsClasses.forEach(function (className) {
+      Array.prototype.forEach.call(document.getElementsByClassName(className), function (e) {
+        e.classList.add("js-hidden");
+      });
+    });
+  </script>
+  <script src="./Intra Projects Python Module 08 Edit_files/application-af501c62c38cf176aa6c2312ad6c0e0fbb4eb3470632bff69222ee1777d4d650.js.téléchargement"></script>
+
+
+
+
+
+
+
+</body></html>
